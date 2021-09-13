@@ -1,8 +1,10 @@
 import Image from 'next/image';
+import { useState } from 'react';
 import * as RiIcons from 'react-icons/ri';
 import ImageSlider from '../components/ImageSlider';
 
 export default function Home() {
+  const [slider, setSlider] = useState('');
 
   const slideLeft = () => {};
 
