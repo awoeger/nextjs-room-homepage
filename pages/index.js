@@ -1,11 +1,23 @@
 import Image from 'next/image';
+import * as RiIcons from 'react-icons/ri';
+import ImageSlider from '../components/ImageSlider';
 
 export default function Home() {
+
+  const slideLeft = () => {};
+
+  const slideRight = () => {};
+
   return (
     <div>
       <header>Logo and Burger Menu</header>
-      <section></section>
-
+      <ImageSlider />
+      <button onClick={slideLeft}>
+        <RiIcons.RiArrowLeftSLine />
+      </button>
+      <button onClick={slideRight}>
+        <RiIcons.RiArrowRightSLine />
+      </button>
       <section>
         <h2>Discover innovative ways to decorate</h2>
         <p>
