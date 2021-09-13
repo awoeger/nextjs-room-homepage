@@ -35,15 +35,15 @@ function ImageSlider() {
   const length = sliderImages.length;
 
   const previousSlide = () => {
-    setCurrentSlide(currentSlide === length ? 1 : currentSlide - 1);
+    setCurrentSlide(currentSlide === 1 ? length : currentSlide - 1);
   };
 
   const nextSlide = () => {
     setCurrentSlide(currentSlide === length ? 1 : currentSlide + 1);
   };
 
-  console.log(currentSlide);
-  console.log(length);
+  console.log('currentSlide', currentSlide);
+  console.log('length', length);
 
   return (
     <section css={slider}>
