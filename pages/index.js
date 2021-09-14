@@ -3,7 +3,7 @@ import Image from 'next/image';
 import * as BsIcons from 'react-icons/bs';
 import Header from '../components/Header';
 import ImageSlider from '../components/ImageSlider';
-import { darkGray } from '../styles/styles';
+import { darkGray, lightGray } from '../styles/styles';
 
 const shopButton = css`
   border: none;
@@ -16,6 +16,11 @@ const shopButton = css`
   display: flex;
   align-items: center;
   padding: 0 25px;
+
+  :hover,
+  :active {
+    color: ${lightGray};
+  }
 
   span {
     margin-right: 20px;
