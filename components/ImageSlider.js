@@ -33,6 +33,11 @@ const slider = css`
     border: none;
     cursor: pointer;
     position: absolute;
+
+    :hover,
+    :active {
+      color: ${lightGray};
+    }
   }
 
   .leftArrow {
