@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import Image from 'next/image';
 import * as BsIcons from 'react-icons/bs';
+import Header from '../components/Header';
 import ImageSlider from '../components/ImageSlider';
 import { darkGray } from '../styles/styles';
 
@@ -14,6 +15,7 @@ const shopButton = css`
   margin: 30px 0px;
   display: flex;
   align-items: center;
+  padding: 0 25px;
 
   span {
     margin-right: 20px;
@@ -37,6 +39,7 @@ const lightDarkSection = css`
 export default function Home() {
   return (
     <div>
+      <Header />
       <ImageSlider />
       <section>
         <button css={shopButton}>
