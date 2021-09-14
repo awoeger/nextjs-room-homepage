@@ -1,6 +1,5 @@
 import { css } from '@emotion/react';
 import { useState } from 'react';
-import { darkGray } from '../styles/styles';
 import Burger from './Burger';
 import RightNav from './RightNav';
 
@@ -13,13 +12,12 @@ const navbar = (open) => css`
   align-items: center;
   position: absolute;
   z-index: 100;
-  /* background: ${open ? 'white' : 'white'};
-  opacity: ${open ? 1 : 0}; */
+  background: ${open ? 'white' : 'none'};
 
   p {
     padding: 10px;
     color: white;
-    display: ${open ? 'flex' : 'none'};
+    display: ${open ? 'none' : 'flex'};
   }
 `;
 
@@ -27,7 +25,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav css={navbar}>
+    <nav css={navbar(open)}>
       <div>
         <p>room</p>
       </div>

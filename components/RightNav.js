@@ -18,11 +18,6 @@ const listContainer = (open) => css`
 
   @media (max-width: 768px) {
     display: ${open ? 'flex' : 'none'};
-    /* position: fixed; */
-    /* top: 0;
-    right: 0; */
-    /* width: 100vw;
-    height: 65px; */
   }
 `;
 
