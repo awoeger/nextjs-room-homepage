@@ -9,12 +9,9 @@ const burgerStyle = (open) => css`
   left: 20px;
   display: flex;
   justify-content: space-around;
-
-  @media (max-width: 1125px) {
-    display: flex;
-    justify-content: space-around;
-    flex-flow: column nowrap;
-  }
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
 
   div {
     width: 2rem;
@@ -32,6 +29,12 @@ const burgerStyle = (open) => css`
     }
     &:nth-of-type(3) {
       transform: ${open ? 'rotate(-45deg)' : 'rotate(0deg)'};
+    }
+  }
+
+  @media (min-width: 830px) {
+    div {
+      display: none;
     }
   }
 `;

@@ -1,15 +1,17 @@
 import { css } from '@emotion/react';
 import Image from 'next/image';
 import { useState } from 'react';
+import * as BsIcons from 'react-icons/bs';
 import * as RiIcons from 'react-icons/ri';
 import { darkGray, lightGray } from '../styles/styles';
 import { sliderImages } from './SliderData';
 
 const slider = css`
-  width: 100vw;
+  /* width: 100vw; */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 100px;
 
   .imageContainer {
     position: relative;
@@ -41,13 +43,83 @@ const slider = css`
   }
 
   .leftArrow {
-    right: 40px;
-    top: 314px;
+    right: 50px;
+    top: 193px;
   }
 
   .rightArrow {
     right: 0px;
-    top: 314px;
+    top: 193px;
+  }
+
+  #shopButton {
+    border: none;
+    text-transform: uppercase;
+    background: white;
+    color: ${darkGray};
+    letter-spacing: 5px;
+    font-size: 1.3em;
+    margin: 20px 0px 20px 0;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+
+    :hover,
+    :active {
+      color: ${lightGray};
+    }
+
+    span {
+      margin-right: 20px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .imageContainer {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 100%;
+
+      .heroText {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        #shopButton {
+          position: absolute;
+          bottom: 0px;
+          left: 0px;
+        }
+      }
+    }
+
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    h1 {
+      font-size: 2em;
+    }
+  }
+
+  @media (min-width: 1250px) {
+    .imageContainer {
+      .heroText {
+        position: relative;
+
+        #shopButton {
+          position: absolute;
+          bottom: 60px;
+          left: 0px;
+        }
+      }
+    }
   }
 `;
 
@@ -67,15 +139,12 @@ function ImageSlider() {
     <section css={slider}>
       {sliderImages.map((slide) => {
         return (
-          <div
-            key={slide.id}
-            // className={slide.id === currentSlide ? 'slideActive' : 'slide'}
-          >
+          <div key={slide.id}>
             {slide.id === currentSlide && (
               <div className="imageContainer">
                 <Image
-                  width="375px"
-                  height="360px"
+                  width="840px"
+                  height="534px"
                   src={slide.src}
                   alt="Room furniture"
                   className="image"
@@ -86,8 +155,14 @@ function ImageSlider() {
                 <button className="rightArrow" onClick={nextSlide}>
                   <RiIcons.RiArrowRightSLine color="white" size={40} />
                 </button>
-                <h1>{slide.heading}</h1>
-                <p>{slide.text}</p>
+                <div className="heroText">
+                  <h1>{slide.heading}</h1>
+                  <p>{slide.text}</p>
+                  <button id="shopButton">
+                    <span>Shop now</span>
+                    <BsIcons.BsArrowRight size={30} />
+                  </button>
+                </div>
               </div>
             )}
           </div>

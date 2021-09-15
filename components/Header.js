@@ -19,6 +19,15 @@ const navbar = (open) => css`
     color: white;
     display: ${open ? 'none' : 'flex'};
   }
+
+  @media (min-width: 830px) {
+    justify-content: flex-start;
+    align-content: center;
+
+    p {
+      font-size: 1.5em;
+    }
+  }
 `;
 
 export default function Header() {

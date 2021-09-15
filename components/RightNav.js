@@ -16,8 +16,15 @@ const listContainer = (open) => css`
     font-size: 0.8em;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 830px) {
     display: ${open ? 'flex' : 'none'};
+  }
+
+  @media (min-width: 830px) {
+    a {
+      color: white;
+      font-size: 1.3em;
+    }
   }
 `;
 
